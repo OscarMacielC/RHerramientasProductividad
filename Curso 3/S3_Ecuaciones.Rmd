@@ -1,0 +1,32 @@
+---
+title: "S3_Ecuaciones"
+author: "OscarMacielC"
+date: "2025-06-18"
+output: html_document
+---
+
+![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75) [El github para la clase](https://github.com/OscarMacielC/RHerramientasProductividad) ![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+ [Ecuaciones en laTex](https://manualdelatex.com/tutoriales/ecuaciones)
+
+
+La ecuación $E=mc^2$ es fundamental para la física.
+
+1. Energía cinética: $K=\frac{1}{2}mv^2$
+2. Ley de gravitación: $G\frac{m_1m_2}{rad^2}$
+3. Relatividad general: $R_{\mu\nu} - \frac{1}{2} R  = \kappa T_{\mu\nu}$
+4. Ley de newton $F = ma$
+5. Teorema de Pitágoras $c^2 = a^2 + b^2$
+6. Energía de Einstein $E = mc^2$
+7. Ley de Coulomb $F = k \frac{q_1 q_2}{r^2}$
+8. Ecuación general $x = \frac{ -b \pm \sqrt{b^2 - 4ac} }{2a}$
+9. Formación del agua: $2\mathrm{H}_2(g) + \mathrm{O}_2(g) \rightarrow 2\mathrm{H}_2\mathrm{O}(l)$
+10. $(a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k$
+11. Media aritmética $\bar{x} = \frac{1}{n} \sum_{i=1}^n$
+12. Ley de Amperè-Maxwell $\nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}$
+13. Función de activación $y^{(j)} =\begin{bmatrix}y_1^{(j)} \\\vdots \\y_n^{(j)}\end{bmatrix}=\begin{bmatrix}\varphi(\nu_1^{(j)}) \\\vdots \\\varphi(\nu_n^{(j)})\end{bmatrix}=\varphi\left(\begin{bmatrix}\nu_1^{(j)} \\\vdots \\\nu_n^{(j)}\end{bmatrix}\right)= \varphi^{(j)}$

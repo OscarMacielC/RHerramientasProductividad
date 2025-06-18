@@ -1,0 +1,41 @@
+---
+title: "S3_Listas"
+author: "OscarMacielC"
+date: "2025-06-18"
+output: 
+  html_document:
+    theme: darkly
+    highlight: haddock
+---
+
+![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75) [El github para la clase](https://github.com/OscarMacielC/RHerramientasProductividad) ![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Creamos el vector de frutas
+frutas <- c("Manzana", "Banana", "Banana", "Sandía")
+# Generamos tabla de frecuencias
+tabla <- table(frutas)
+# Mostramos la tabla
+print(tabla)
+# Imprime la fruta más repetida
+print(names(which.max(tabla)))  
+```
+
+---
+## Análisis gráfico de frutas preferidas
+
+```{r}
+library(ggplot2)
+
+frutas <- c("Manzana", "Banana", "Banana", "Sandía", "Banana")
+df_frutas <- as.data.frame(table(frutas))
+
+ggplot(df_frutas, aes(x = frutas, y = Freq, fill = frutas)) +
+  geom_col() +
+  geom_text(aes(label = Freq), vjust = 0.5) +
+  theme_classic()
+```

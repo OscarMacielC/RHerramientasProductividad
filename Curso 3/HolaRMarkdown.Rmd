@@ -4,9 +4,8 @@ author: "OscarMacielC"
 date: "2025-06-18"
 output:
   html_document: default
-  pdf_document: default
 ---
- <https://github.com/OscarMacielC>.
+![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75) [El github para la clase](https://github.com/OscarMacielC/RHerramientasProductividad) ![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75)
 
 # Análisis del data set CARS  
 ## por Oscar Maciel
