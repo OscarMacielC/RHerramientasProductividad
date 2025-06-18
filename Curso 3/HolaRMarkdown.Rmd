@@ -1,0 +1,37 @@
+---
+title: "MiMarkdown"
+author: "OscarMacielC"
+date: "2025-06-18"
+output:
+  html_document: default
+  pdf_document: default
+---
+ <https://github.com/OscarMacielC>.
+
+# Análisis del data set CARS  
+## por Oscar Maciel
+
+---
+
+**Primera Parte**
+
+```{r}
+# Cargamos datos
+data(cars)
+# Mostramos la estructura
+str(cars)
+# Y un resumen estadístico
+summary(cars)
+```
+# Gráfica
+```{r}
+plot(cars)
+```
+# Histograma
+```{r}
+hist(cars$speed)
+```
+#boxplot
+```{r}
+boxplot(cars$dist)
+```
