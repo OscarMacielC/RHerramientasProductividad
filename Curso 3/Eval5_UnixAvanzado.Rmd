@@ -1,0 +1,97 @@
+---
+title: "Eval5_UnixAvanzado"
+author: "OscarMacielC"
+date: "2025-06-19"
+output:
+  html_document:
+    theme: darkly
+    highlight: haddock
+---
+![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75) [El github para la clase](https://github.com/OscarMacielC/RHerramientasProductividad) ![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75)
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Pregunta 1  
+**¿Cuál enunciado describe las razones por las que recomendamos usar git y GitHub al trabajar en proyectos de análisis de datos?**  
+**Respuesta:** Git y GitHub permiten un fácil control de versiones, colaboración y compartición de recursos.
+
+---
+
+## Pregunta 2  
+**Selecciona los pasos necesarios para:**
+
+- Crear un directorio llamado `project-clone`,  
+- Clonar el contenido de un repositorio git en la siguiente URL en ese directorio (`https://github.com/user123/repo123.git`), y  
+- Listar el contenido del repositorio clonado.
+
+**Respuesta:**  
+`mkdir project-clone cd project-clone git clone https://github.com/user123/repo123.git ls`
+
+---
+
+## Pregunta 3  
+**Has clonado un repositorio de GitHub y añadiste una nueva línea al archivo `heights.txt` usando `echo "165" >> heights.txt`. Luego ejecutaste `git status`.**  
+**¿Qué mensaje se devuelve y qué significa?**  
+**Respuesta:** `modified: heights.txt, no changes added to commit` → El archivo fue modificado, pero los cambios no han sido preparados ni confirmados en el repositorio local.
+
+---
+
+## Pregunta 4  
+**Intentaste subir cambios usando:**
+```bash
+git add modified_file.txt
+git commit -m "minor changes to file" modified_file.txt
+git pull
+```
+**¿Por qué no se añadió el archivo al repositorio remoto?**  
+**Respuesta:** Se debería usar `git push` en lugar de `git pull`.
+
+---
+
+## Pregunta 5  
+**¿Qué secuencia convierte un directorio local en un repositorio Git y sube un archivo README?**  
+**Respuesta:**  
+```bash
+echo "A new repository with my scripts and data" > README.txt
+git init
+git add README.txt
+git commit -m "First commit. Adding README file."
+git remote add origin https://github.com/user123/repo123.git
+git push
+```
+
+---
+
+## Pregunta 6  
+**Realizaste un cambio local, hiciste `git push` y obtuviste el mensaje: `Everything up-to-date`.**  
+**¿Qué comando olvidaste?**  
+**Respuesta:** `git commit`
+
+---
+
+## Pregunta 7  
+**Clonaste un repositorio. `git status` indica que todo está actualizado, pero sabes que hubo cambios remotos.**  
+**¿Cómo sincronizas estos cambios en un solo comando?**  
+**Respuesta:** `git pull`
+
+---
+
+## Pregunta 8  
+**¿Qué comando permite ocultar un archivo en Unix/Linux?**  
+**Respuesta:** Colocar un punto `.` al inicio del nombre del archivo.
+
+---
+
+## Pregunta 9  
+**¿Qué comando eliminará todos los archivos que comienzan con D?**  
+**Respuesta:** `rm D*`
+
+---
+
+## Pregunta 10  
+**¿Qué alias permite mostrar los 10 archivos más recientes ordenados por fecha, mostrando nombre, tamaño y tipo?**  
+**Respuesta:** `alias seetop='ls -lt | head'`
