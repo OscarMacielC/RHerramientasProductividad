@@ -2,10 +2,15 @@
 title: "S3_Ecuaciones"
 author: "OscarMacielC"
 date: "2025-06-18"
-output: html_document
+output: 
+  html_document:
+    theme: darkly
+    highlight: haddock
 ---
 
 ![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75) [El github para la clase](https://github.com/OscarMacielC/RHerramientasProductividad) ![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75)
+
+---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

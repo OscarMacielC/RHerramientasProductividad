@@ -1,0 +1,53 @@
+---
+title: "MiMarkdown"
+author: "OscarMacielC"
+date: "2025-06-18"
+output:
+  html_document:
+    theme: darkly
+    highlight: haddock
+---
+![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75) [El github para la clase](https://github.com/OscarMacielC/RHerramientasProductividad) ![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75)
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Pregunta 1  
+**¿Cuál es una de las ventajas de hacer un informe en R Markdown?**  
+**Respuesta:** R Markdown te permite agregar automáticamente figuras al documento final.
+
+---
+
+## Pregunta 2  
+**Tienes un vector de alturas de estudiantes llamado `heights`. Quieres generar un histograma de estas alturas en un informe final, pero no quieres que el código aparezca en el informe final. Quieres nombrar el fragmento de R como `histogram` para poder encontrarlo fácilmente más tarde.**  
+**¿Cuál de los siguientes fragmentos de R hace todo lo que quieres que haga?**  
+**Respuesta:**
+```{markdown}
+{r histogram, echo=FALSE}
+hist(heights)
+```
+
+---
+
+## Pregunta 3  
+**A continuación se muestra un fragmento de código R Markdown que genera un informe:**
+
+```{markdown}
+---
+title: "Final Grade Distribution"
+output: pdf_document
+---
+
+{r, echo=FALSE}
+load(file="my_data.Rmd")
+summary(grades)
+```
+
+**Selecciona la afirmación que describe el informe generado por el código anterior.**  
+**Respuesta:** Un documento PDF llamado “Final Grade Distribution” que imprime un resumen del objeto `grades`. El código para cargar el archivo y producir el resumen no se incluirá en el informe final.
+
+---

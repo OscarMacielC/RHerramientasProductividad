@@ -1,0 +1,65 @@
+---
+title: "MiMarkdown"
+author: "OscarMacielC"
+date: "2025-06-18"
+output:
+  html_document:
+    theme: darkly
+    highlight: haddock
+---
+![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75) [El github para la clase](https://github.com/OscarMacielC/RHerramientasProductividad) ![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75)
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Pregunta 1
+**¿Qué representa cada uno de ~, ., .., / respectivamente?**  
+**Respuesta:** Directorio home, Directorio actual, Directorio padre, Directorio raíz.
+
+---
+
+## Pregunta 2
+**Supongamos que quieres eliminar tu directorio de proyectos en `./myproject`. El directorio no está vacío: todavía hay archivos dentro.**  
+**¿Qué comando deberías usar?**  
+**Respuesta:** `rm -r myproject`
+
+---
+
+## Pregunta 3
+**Tienes un script de R en `~/myproject/R/plotfig.R` y el directorio de trabajo es `/myproject/result`.  
+¿Qué función deberías escribir para guardar el gráfico en `~/myproject/result/fig/barplot.png`?**  
+**Respuesta:** `ggsave('fig/barplot.png')`, porque esta es la ruta relativa al directorio de trabajo actual.
+
+---
+
+## Pregunta 4
+**Selecciona las dos opciones incorrectas respecto a la terminal.**  
+**Respuestas:**
+- Puedes hacer clic en la terminal para cambiar la posición del cursor.  
+- Para un comando largo que abarca tres líneas podemos usar la flecha hacia arriba para navegar el cursor a la primera línea.
+
+---
+
+## Pregunta 5
+**¿Cuál de las siguientes afirmaciones sobre el sistema de archivos no es correcta?**  
+**Respuesta:** El directorio home es donde existen los archivos del sistema que vienen con tu computadora.
+
+---
+
+## Pregunta 6
+**¿Cuáles de los siguientes significados de las opciones que siguen a `less` no son correctos?**  
+**Respuesta:** `-S`: guarda automáticamente el objeto de búsqueda.  
+(*Esto es falso: en realidad evita el salto de línea automático.*)
+
+---
+
+## Pregunta 7
+**Selecciona las dos opciones incorrectas respecto a la preparación para un proyecto de ciencia de datos.**  
+**Respuestas:**
+- Siempre usa rutas absolutas al trabajar en un proyecto de ciencia de datos.  
+- Guardar tu código en un archivo de Word e insertar imágenes de salida es una buena idea para hacer un informe reproducible.
+
+---
