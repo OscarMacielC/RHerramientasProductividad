@@ -1,0 +1,43 @@
+---
+title: "Eval2_ImportacionDatos"
+author: "OscarMacielC"
+date: "2025-07-02"
+output:
+  html_document:
+    theme: darkly
+    highlight: haddock
+  pdf_document: default
+---
+
+![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75) [El github para la clase](https://github.com/OscarMacielC/RHerramientasProductividad) ![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75)
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Pregunta 1
+**Inspecciona el archivo en la siguiente URL:  
+<https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data>  
+¿Cuál función de readr debería usarse para importar este archivo?**  
+**Respuesta:** Ninguna de las anteriores
+
+---
+
+## Pregunta 2
+**Consulta la documentación de la función readr que elegiste en la pregunta anterior para aprender sobre sus argumentos.**
+**Determina qué argumentos necesitas para el archivo de la pregunta anterior:**
+
+url <- "https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data"
+**¿Este archivo tiene una fila de encabezado?**
+**¿La función readr que elegiste necesita algún argumento adicional para importar los datos correctamente?**
+**Respuesta:** No, no hay encabezado. Es necesario el argumento col_names = FALSE.
+
+---
+
+## Pregunta 3
+**Inspecciona los datos importados de la pregunta anterior.  
+¿Cuántas filas hay en el conjunto de datos? ¿Cuántas columnas hay en el conjunto de datos?**  
+**Respuesta:** 569, 32
+
+---

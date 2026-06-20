@@ -1,0 +1,243 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Eval5\_UnixAvanzado},
+  pdfauthor={OscarMacielC},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Eval5\_UnixAvanzado}
+\author{OscarMacielC}
+\date{2025-06-19}
+
+\begin{document}
+\maketitle
+
+\pandocbounded{\includegraphics[keepaspectratio]{https://www.oscarmacielc.com/_next/image?url=\%2F_next\%2Fstatic\%2Fmedia\%2FOscarLogo.cdfce2e5.png&w=64&q=75}}
+\href{https://github.com/OscarMacielC/RHerramientasProductividad}{El
+github para la clase}
+\pandocbounded{\includegraphics[keepaspectratio]{https://www.oscarmacielc.com/_next/image?url=\%2F_next\%2Fstatic\%2Fmedia\%2FOscarLogo.cdfce2e5.png&w=64&q=75}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Pregunta 1}\label{pregunta-1}
+
+\textbf{¿Cuál enunciado describe las razones por las que recomendamos
+usar git y GitHub al trabajar en proyectos de análisis de datos?}\\
+\textbf{Respuesta:} Git y GitHub permiten un fácil control de versiones,
+colaboración y compartición de recursos.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Pregunta 2}\label{pregunta-2}
+
+\textbf{Selecciona los pasos necesarios para:}
+
+\begin{itemize}
+\tightlist
+\item
+  Crear un directorio llamado \texttt{project-clone},\\
+\item
+  Clonar el contenido de un repositorio git en la siguiente URL en ese
+  directorio (\texttt{https://github.com/user123/repo123.git}), y\\
+\item
+  Listar el contenido del repositorio clonado.
+\end{itemize}
+
+\textbf{Respuesta:}\\
+\texttt{mkdir\ project-clone\ cd\ project-clone\ git\ clone\ https://github.com/user123/repo123.git\ ls}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Pregunta 3}\label{pregunta-3}
+
+\textbf{Has clonado un repositorio de GitHub y añadiste una nueva línea
+al archivo \texttt{heights.txt} usando
+\texttt{echo\ "165"\ \textgreater{}\textgreater{}\ heights.txt}. Luego
+ejecutaste \texttt{git\ status}.}\\
+\textbf{¿Qué mensaje se devuelve y qué significa?}\\
+\textbf{Respuesta:}
+\texttt{modified:\ heights.txt,\ no\ changes\ added\ to\ commit} → El
+archivo fue modificado, pero los cambios no han sido preparados ni
+confirmados en el repositorio local.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Pregunta 4}\label{pregunta-4}
+
+\textbf{Intentaste subir cambios usando:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{git}\NormalTok{ add modified\_file.txt}
+\FunctionTok{git}\NormalTok{ commit }\AttributeTok{{-}m} \StringTok{"minor changes to file"}\NormalTok{ modified\_file.txt}
+\FunctionTok{git}\NormalTok{ pull}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{¿Por qué no se añadió el archivo al repositorio remoto?}\\
+\textbf{Respuesta:} Se debería usar \texttt{git\ push} en lugar de
+\texttt{git\ pull}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Pregunta 5}\label{pregunta-5}
+
+\textbf{¿Qué secuencia convierte un directorio local en un repositorio
+Git y sube un archivo README?}\\
+\textbf{Respuesta:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{echo} \StringTok{"A new repository with my scripts and data"} \OperatorTok{\textgreater{}}\NormalTok{ README.txt}
+\FunctionTok{git}\NormalTok{ init}
+\FunctionTok{git}\NormalTok{ add README.txt}
+\FunctionTok{git}\NormalTok{ commit }\AttributeTok{{-}m} \StringTok{"First commit. Adding README file."}
+\FunctionTok{git}\NormalTok{ remote add origin https://github.com/user123/repo123.git}
+\FunctionTok{git}\NormalTok{ push}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Pregunta 6}\label{pregunta-6}
+
+\textbf{Realizaste un cambio local, hiciste \texttt{git\ push} y
+obtuviste el mensaje: \texttt{Everything\ up-to-date}.}\\
+\textbf{¿Qué comando olvidaste?}\\
+\textbf{Respuesta:} \texttt{git\ commit}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Pregunta 7}\label{pregunta-7}
+
+\textbf{Clonaste un repositorio. \texttt{git\ status} indica que todo
+está actualizado, pero sabes que hubo cambios remotos.}\\
+\textbf{¿Cómo sincronizas estos cambios en un solo comando?}\\
+\textbf{Respuesta:} \texttt{git\ pull}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Pregunta 8}\label{pregunta-8}
+
+\textbf{¿Qué comando permite ocultar un archivo en Unix/Linux?}\\
+\textbf{Respuesta:} Colocar un punto \texttt{.} al inicio del nombre del
+archivo.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Pregunta 9}\label{pregunta-9}
+
+\textbf{¿Qué comando eliminará todos los archivos que comienzan con
+D?}\\
+\textbf{Respuesta:} \texttt{rm\ D*}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Pregunta 10}\label{pregunta-10}
+
+\textbf{¿Qué alias permite mostrar los 10 archivos más recientes
+ordenados por fecha, mostrando nombre, tamaño y tipo?}\\
+\textbf{Respuesta:}
+\texttt{alias\ seetop=\textquotesingle{}ls\ -lt\ \textbar{}\ head\textquotesingle{}}
+
+\end{document}

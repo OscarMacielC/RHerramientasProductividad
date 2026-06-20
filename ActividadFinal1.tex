@@ -1,0 +1,323 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={ActividadFinal1},
+  pdfauthor={OscarMacielC},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{ActividadFinal1}
+\author{OscarMacielC}
+\date{2025-08-11}
+
+\begin{document}
+\maketitle
+
+\pandocbounded{\includegraphics[keepaspectratio]{https://www.oscarmacielc.com/_next/image?url=\%2F_next\%2Fstatic\%2Fmedia\%2FOscarLogo.cdfce2e5.png&w=64&q=75}}
+\href{https://github.com/OscarMacielC/RHerramientasProductividad}{El
+github para la clase}
+\pandocbounded{\includegraphics[keepaspectratio]{https://www.oscarmacielc.com/_next/image?url=\%2F_next\%2Fstatic\%2Fmedia\%2FOscarLogo.cdfce2e5.png&w=64&q=75}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Actividad 1}\label{actividad-1}
+
+\subsection{1 Explora el entorno de
+RStudio:}\label{explora-el-entorno-de-rstudio}
+
+\textbf{¿Qué ves en los paneles?} varias ventanas para hacer cosas,
+código, Consola, Environment para ver lo usado actualmente, archivos,
+graficas, y otras más.
+
+\textbf{¿Dónde irías para escribir instrucciones?} En Script para
+guardarlas o en consola para ejecutarlas de inmediato.
+
+\textbf{¿Dónde aparecen los resultados?} Texto y tablas en Consola;
+gráficos en la pestaña Plots.
+
+\textbf{¿Cómo explicarías esto a alguien que nunca ha programado?} Como
+cocinar: receta (script), estufa (consola), despensa (environment) y un
+celular para tomar las fotos o investigar (plots/help).
+
+\subsection{2. Juega con R paso a paso:}\label{juega-con-r-paso-a-paso}
+
+\subsection{3. Toma una captura de pantalla y pégala en el documento,
+mostrando que ejecutaste el código en
+RStudio.}\label{toma-una-captura-de-pantalla-y-puxe9gala-en-el-documento-mostrando-que-ejecutaste-el-cuxf3digo-en-rstudio.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Cargar el dataset}
+\FunctionTok{data}\NormalTok{(mtcars)}
+\CommentTok{\# Ver las primeras filas}
+\FunctionTok{head}\NormalTok{(mtcars)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Ver los nombres de las columnas}
+\FunctionTok{colnames}\NormalTok{(mtcars)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "mpg"  "cyl"  "disp" "hp"   "drat" "wt"   "qsec" "vs"   "am"   "gear"
+## [11] "carb"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Calcular la media de las millas por galón}
+\FunctionTok{mean}\NormalTok{(mtcars}\SpecialCharTok{$}\NormalTok{mpg)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 20.09062
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Filtrar autos con más de 6 cilindros}
+\FunctionTok{subset}\NormalTok{(mtcars, cyl }\SpecialCharTok{\textgreater{}} \DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+## Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+## Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
+## Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
+## Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+## Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
+## Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+## Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+## AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
+## Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
+## Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
+## Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
+## Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
+\end{verbatim}
+
+\subsection{4.Analizando}\label{analizando}
+
+\textbf{¿Qué crees que fue más fácil?} Cargar mtcars y verlo con head(),
+listar columnas con colnames(), y calcular la media con
+mean(mtcars\$mpg).
+
+\textbf{¿Qué resultó confuso?} Saber que mtcars ya está precargado en R,
+entender \$ para acceder a columnas, y usar subset() con lógica
+booleana.
+
+\textbf{¿Qué errores te imaginas que cometerían tus estudiantes?}
+Escribir mal nombres, olvidar mayúsculas, confundir = con ==, omitir el
+dataset en las funciones.
+
+\textbf{¿Cómo enseñarías estas primeras instrucciones?} Comparar con
+Excel (filas=autos, columnas=variables, \$=columna llamada\ldots),
+mostrar head() y View(), avanzar paso a paso, quizá dar un ejemplo y
+luego dejarlos practicar.
+
+\textbf{¿Qué analogías, metáforas o ejemplos usarías?} \$=etiqueta de
+cajón, subset()=filtro de Excel, dataset=libreta de contactos.
+
+\textbf{¿Qué herramientas visuales o estrategias crees que pueden
+ayudar?} Usar View(), diagramas de tabla, comparaciones con Excel,
+ejercicios cortos y colores para resaltar elementos clave.
+
+\subsection{5. Profundicemos en la construcción de estas habilidades
+docentes.}\label{profundicemos-en-la-construcciuxf3n-de-estas-habilidades-docentes.}
+
+Abre RStudio y crea un nuevo script:
+
+\subsection{6. Escribe y ejecuta el siguiente código en tu
+script:}\label{escribe-y-ejecuta-el-siguiente-cuxf3digo-en-tu-script}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Filtrar autos con más de 6 cilindros}
+\NormalTok{autos\_mas6c }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(mtcars, cyl }\SpecialCharTok{\textgreater{}} \DecValTok{6}\NormalTok{)}
+\CommentTok{\# Guardar el nuevo dataframe como CSV}
+\FunctionTok{write.csv}\NormalTok{(autos\_mas6c, }\StringTok{"autos\_mas6c.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{7. Toma una captura de pantalla donde se ve el código y los
+resultados en la consola de R y cópiala en el documento. (paso
+3)}\label{toma-una-captura-de-pantalla-donde-se-ve-el-cuxf3digo-y-los-resultados-en-la-consola-de-r-y-cuxf3piala-en-el-documento.-paso-3}
+
+\subsection{8. Observa y reflexiona, mientras ejecutas el código,
+después responde en el
+documento}\label{observa-y-reflexiona-mientras-ejecutas-el-cuxf3digo-despuuxe9s-responde-en-el-documento}
+
+\textbf{¿Qué parte te pareció más clara y cuál podría confundir a un
+estudiante sin experiencia?} La parte más clara es subset() si se
+compara con un filtro en Excel, y lo más confuso sería entender que
+\textless- crea un nuevo objeto y que write.csv() guarda un archivo en
+la computadora.
+
+\textbf{¿Qué conceptos requieren una explicación previa?} Sería
+necesario explicar qué es un data frame, cómo funciona subset() para
+filtrar filas, el operador \textless- para asignar resultados y
+write.csv() para exportar datos.
+
+\textbf{¿Qué metáforas o comparaciones podrías usar para explicar esos
+conceptos?} \textless- sería como poner el resultado en un nuevo plato,
+subset() como usar un colador para quedarte solo con lo que cumpla una
+condición, un data frame como una hoja de Excel, y write.csv() como
+guardar esa hoja para compartirla.
+
+\subsection{9. Conecta con tu rol docente y completa el documento
+realizando lo
+siguiente:}\label{conecta-con-tu-rol-docente-y-completa-el-documento-realizando-lo-siguiente}
+
+data(mtcars) Le pedimos a R que cargue un conjunto de datos que ya viene
+instalado, como abrir un ejemplo que viene con el programa. head()
+Muestra solo las primeras filas de la tabla para revisarla sin
+abrumarnos; aquí pedimos 5 para reconocer su contenido.
+mean(mtcars\$mpg) Calcula el promedio de la columna mpg; el signo de
+pesos indica que queremos esa columna específica. subset(mtcars, cyl
+\textgreater{} 6) Filtra las filas que cumplen la condición de tener más
+de 6 cilindros. Guarda el resultado filtrado en un nuevo objeto llamado
+autos\_mas6c. write.csv() Exporta el nuevo conjunto de datos a un
+archivo CSV que se puede abrir o compartir.
+
+Ideas para introducir el concepto de data frame - Hacer una tabla de los
+estudiantes con diferentes datos, como año de nacimiento, película
+favorita, que elijan entre 3 opciones una, y después mencionar que se
+puede hacer con cada tipo de dato.
+
+Sugerencias de errores frecuentes y cómo acompañar al estudiante Hacer
+errores al escribir código para mostrar cómo solucionarlos, ver que
+ocurre puede grabarles el ejemplo: -Escribir mal el nombre del objeto
+(mtcars como mtcar): mostrar cómo usar autocomplete o revisar
+Environment. -Olvidar mayúsculas o minúsculas: reforzar que R es
+case-sensitive. -Confundir = con == al comparar: repasar diferencias
+entre asignar y comparar. -No encontrar el archivo CSV: guiar para
+revisar y cambiar el directorio de trabajo con getwd() / setwd(). Al
+final entregar un archivo con errores frecuentes que ocurren.
+
+Propuesta visual o actividad breve Usar la tabla de ejemplo y pedir a
+los estudiantes que señalen una columna, calculen un promedio y filtren
+por una condición. Usar los datos para hacer unas gráficas simples y que
+vean que es más sencillo interpretarlos.
+
+\subsection{10. Finalmente, sube al LMS:}\label{finalmente-sube-al-lms}
+
+-Hice un .Rmd que contendría el código y las anotaciones, más parecido a
+lo que aprendimos en el curso -Se me hace raro hacer el R, porque pues
+solo era copiar
+
+\end{document}

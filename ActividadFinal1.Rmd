@@ -1,0 +1,124 @@
+---
+title: "ActividadFinal1"
+author: "OscarMacielC"
+date: "2025-08-11"
+output:
+  pdf_document: default
+  html_document:
+    theme: darkly
+    highlight: haddock
+  word_document: default
+---
+![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75) [El github para la clase](https://github.com/OscarMacielC/RHerramientasProductividad) ![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75)
+
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Actividad 1
+
+## 1  Explora el entorno de RStudio:
+**¿Qué ves en los paneles?**
+varias ventanas para hacer cosas, código, Consola, Environment para ver lo usado actualmente, archivos, graficas, y otras más.
+
+**¿Dónde irías para escribir instrucciones?**
+En Script para guardarlas o en consola para ejecutarlas de inmediato.
+
+**¿Dónde aparecen los resultados?**
+Texto y tablas en Consola; gráficos en la pestaña Plots.
+
+**¿Cómo explicarías esto a alguien que nunca ha programado?**
+Como cocinar: receta (script), estufa (consola), despensa (environment) y un celular para tomar las fotos o investigar (plots/help).
+
+
+## 2. Juega con R paso a paso: 
+## 3. Toma una captura de pantalla y pégala en el documento, mostrando que ejecutaste el código en RStudio.
+
+```{r}
+# Cargar el dataset
+data(mtcars)
+# Ver las primeras filas
+head(mtcars)
+```
+```{r}
+# Ver los nombres de las columnas
+colnames(mtcars)
+```
+```{r}
+# Calcular la media de las millas por galón
+mean(mtcars$mpg)
+```
+```{r}
+# Filtrar autos con más de 6 cilindros
+subset(mtcars, cyl > 6)
+```
+
+## 4.Analizando
+**¿Qué crees que fue más fácil?**
+Cargar mtcars y verlo con head(), listar columnas con colnames(), y calcular la media con mean(mtcars$mpg).
+
+**¿Qué resultó confuso?**
+Saber que mtcars ya está precargado en R, entender $ para acceder a columnas, y usar subset() con lógica booleana.
+
+**¿Qué errores te imaginas que cometerían tus estudiantes?**
+Escribir mal nombres, olvidar mayúsculas, confundir = con ==, omitir el dataset en las funciones.
+
+**¿Cómo enseñarías estas primeras instrucciones?**
+Comparar con Excel (filas=autos, columnas=variables, $=columna llamada…), mostrar head() y View(), avanzar paso a paso, quizá dar un ejemplo y luego dejarlos practicar.
+
+**¿Qué analogías, metáforas o ejemplos usarías?**
+$=etiqueta de cajón, subset()=filtro de Excel, dataset=libreta de contactos.
+
+**¿Qué herramientas visuales o estrategias crees que pueden ayudar?**
+Usar View(), diagramas de tabla, comparaciones con Excel, ejercicios cortos y colores para resaltar elementos clave.
+
+## 5. Profundicemos en la construcción de estas habilidades docentes.
+Abre RStudio y crea un nuevo script:
+
+## 6. Escribe y ejecuta el siguiente código en tu script: 
+```{r}
+# Filtrar autos con más de 6 cilindros
+autos_mas6c <- subset(mtcars, cyl > 6)
+# Guardar el nuevo dataframe como CSV
+write.csv(autos_mas6c, "autos_mas6c.csv")
+```
+## 7. Toma una captura de pantalla donde se ve el código y los resultados en la consola de R y cópiala en el documento. (paso 3)
+## 8. Observa y reflexiona, mientras ejecutas el código, después responde en el documento
+
+**¿Qué parte te pareció más clara y cuál podría confundir a un estudiante sin experiencia?**
+La parte más clara es subset() si se compara con un filtro en Excel, y lo más confuso sería entender que <- crea un nuevo objeto y que write.csv() guarda un archivo en la computadora.
+
+**¿Qué conceptos requieren una explicación previa?**
+Sería necesario explicar qué es un data frame, cómo funciona subset() para filtrar filas, el operador <- para asignar resultados y write.csv() para exportar datos.
+
+**¿Qué metáforas o comparaciones podrías usar para explicar esos conceptos?**
+<- sería como poner el resultado en un nuevo plato, subset() como usar un colador para quedarte solo con lo que cumpla una condición, un data frame como una hoja de Excel, y write.csv() como guardar esa hoja para compartirla.
+
+## 9. Conecta con tu rol docente y completa el documento  realizando lo siguiente:
+data(mtcars) Le pedimos a R que cargue un conjunto de datos que ya viene instalado, como abrir un ejemplo que viene con el programa.
+head() Muestra solo las primeras filas de la tabla para revisarla sin abrumarnos; aquí pedimos 5 para reconocer su contenido.
+mean(mtcars$mpg) Calcula el promedio de la columna mpg; el signo de pesos indica que queremos esa columna específica.
+subset(mtcars, cyl > 6) Filtra las filas que cumplen la condición de tener más de 6 cilindros.
+Guarda el resultado filtrado en un nuevo objeto llamado autos_mas6c.
+write.csv() Exporta el nuevo conjunto de datos a un archivo CSV que se puede abrir o compartir.
+
+Ideas para introducir el concepto de data frame
+- Hacer una tabla de los estudiantes con diferentes datos, como año de nacimiento, película favorita, que elijan entre 3 opciones una, y después mencionar que se puede hacer con cada tipo de dato.
+
+Sugerencias de errores frecuentes y cómo acompañar al estudiante
+Hacer errores al escribir código para mostrar cómo solucionarlos, ver que ocurre puede grabarles el ejemplo:
+-Escribir mal el nombre del objeto (mtcars como mtcar): mostrar cómo usar autocomplete o revisar Environment.
+-Olvidar mayúsculas o minúsculas: reforzar que R es case-sensitive.
+-Confundir = con == al comparar: repasar diferencias entre asignar y comparar.
+-No encontrar el archivo CSV: guiar para revisar y cambiar el directorio de trabajo con getwd() / setwd().
+Al final entregar un archivo con errores frecuentes que ocurren.
+
+Propuesta visual o actividad breve
+Usar la tabla de ejemplo y pedir a los estudiantes que señalen una columna, calculen un promedio y filtren por una condición.
+Usar los datos para hacer unas gráficas simples y que vean que es más sencillo interpretarlos.
+
+## 10. Finalmente, sube al LMS:
+ -Hice un .Rmd que contendría el código y las anotaciones, más parecido a lo que aprendimos en el curso
+ -Se me hace raro hacer el R, porque pues solo era copiar
+

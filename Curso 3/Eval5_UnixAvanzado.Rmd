@@ -3,6 +3,7 @@ title: "Eval5_UnixAvanzado"
 author: "OscarMacielC"
 date: "2025-06-19"
 output:
+  pdf_document: default
   html_document:
     theme: darkly
     highlight: haddock

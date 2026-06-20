@@ -1,0 +1,146 @@
+---
+title: "Eval1_ImportacionDatos"
+author: "OscarMacielC"
+date: "2025-07-02"
+output:
+  html_document:
+    theme: darkly
+    highlight: haddock
+  pdf_document: default
+---
+
+![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75) [El github para la clase](https://github.com/OscarMacielC/RHerramientasProductividad) ![](https://www.oscarmacielc.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FOscarLogo.cdfce2e5.png&w=64&q=75)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Pregunta 1
+**¿Cuál de los siguientes NO es parte del proceso de manipulación de datos?**  
+**Respuesta:** Verificar correlaciones entre tus variables.
+
+---
+
+## Pregunta 2
+**¿Qué archivos se pueden abrir en un editor de texto básico?.**
+**Selecciona TODOS los que apliquen**  
+**Respuestas:** 
+* data.txt
+* data.csv
+* data.tsv
+
+---
+
+## Pregunta 3
+**¿Qué tipo de archivo es este?**
+Quieres analizar un archivo que contiene los tiempos de finalización de una carrera para un maratón reciente. Abres el archivo en un editor de texto básico y ves líneas como las siguientes:
+initials,state,age,time  
+vib,MA,61,6:01  
+adc,TX,45,5:45  
+kme,CT,50,4:19  
+**Respuesta:** Un archivo delimitado por comas con un encabezado.
+
+---
+
+## Pregunta 4
+**Supón que la siguiente es la ruta completa al directorio que un estudiante quiere usar como su directorio de trabajo en R: "/Users/student/Documents/projects/"**
+**¿Cuál de las siguientes líneas de código NO PUEDE establecer el directorio de trabajo en el directorio "projects" deseado?**  
+**Respuesta:** setwd(/Users/student/Documents/projects/)
+
+---
+
+## Pregunta 5
+**¿Cuál de los siguientes comandos NO copiaría con éxito "murders.csv" en la carpeta "data"?**  
+Queremos copiar el archivo "murders.csv" del paquete dslabs a una carpeta existente llamada "data", que se encuentra en nuestra carpeta de proyectos HarvardX-Wrangling. Primero ingresamos el siguiente código en nuestra consola de RStudio:
+
+> getwd()  
+[1] "C:/Users/UNIVERSITY/Documents/Analyses/HarvardX-Wrangling"  
+> filename <- "murders.csv"  
+> path <- system.file("extdata", package = "dslabs")
+
+**INCORRECTO (aunque le falta un punto y coma después del setwd("data"):** setwd("data") file.copy(file.path(path, filename),getwd())
+**Respuesta esperada, aunque según yo están bien**
+file.copy(file.path(path, "murders.csv"), file.path(getwd(), "data"))
+o
+file.copy(file.path(path, filename), getwd())
+---
+
+## Pregunta 6
+**No estás seguro de si el archivo murders.csv tiene una fila de encabezado. ¿Cómo podrías verificar esto?  
+Selecciona TODAS las opciones que apliquen.**
+
+**Respuestas:**  
+* Abre el archivo en un editor de texto básico.  
+* En el panel de "Archivos" de RStudio, haz clic en tu archivo y luego selecciona "Ver archivo".  
+* Usa el comando read_lines (recordando especificar el número de filas con el argumento n_max).
+
+---
+
+## Pregunta 7
+**¿Cuál es una diferencia entre read_excel() y read_xlsx()?**  
+**Respuesta:** read_excel() lee tanto archivos .xls como .xlsx al detectar el formato del archivo a partir de su extensión, mientras que read_xlsx() solo lee archivos .xlsx.
+
+---
+
+## Pregunta 8
+**Tienes un archivo llamado “times.txt” que contiene los tiempos de finalización de una carrera de maratón. Las primeras cuatro líneas del archivo se ven así:**
+
+initials,state,age,time  
+vib,MA,61,6:01  
+adc,TX,45,5:45  
+kme,CT,50,4:19  
+
+**¿Qué línea de código NO producirá un tibble con los nombres de columna “initials”, “state”, “age” y “time”?**  
+**INCORRECTO, pero es el único que no hace tibble si no se agrega el readr:** race_times <- read_delim("times.txt", delim = ",")
+**INCORRECTO aunque da warning si lo hace, pero el otro lo hace sin problemas** race_times <- read_csv("times.txt")
+---
+
+## Pregunta 9
+**También tienes acceso a los tiempos de finalización de maratones en forma de un documento de Excel llamado “times.xlsx”. En el documento de Excel, diferentes hojas contienen información de la carrera para diferentes años. La primera hoja se llama “2015”, la segunda se llama “2016” y la tercera se llama “2017”.  **
+**¿Qué línea de código NO importará los datos contenidos en la pestaña “2016” de esta hoja de Excel?**
+**Respuesta**
+times_2016 <- read_xlsx("times.xlsx", sheet = "2")
+
+---
+
+## Pregunta 10
+**Tienes un archivo de valores separados por comas que contiene las iniciales, estados de origen, edades y tiempos de finalización de maratones de los corredores. Las iniciales de los corredores contienen tres caracteres para los nombres de pila, segundo nombre y apellidos (por ejemplo, “KME”).  
+Leíste el archivo usando el siguiente código:  
+race_times <- read.csv("times.csv")  
+¿Cuál es el tipo de dato de las iniciales en el objeto race_times?**  
+**Respuestas:**  
+* caracteres
+* factores
+
+---
+
+## Pregunta 11
+**¿Cuál de las siguientes NO es una diferencia real entre las funciones de importación de readr y las funciones de importación de base R?**  
+**Respuesta parcial:** Las funciones de importación de base R pueden leer archivos .csv, pero no pueden leer archivos con otros delimitadores, como archivos .tsv o archivos de ancho fijo.
+**Probable para completar incorrecta:**
+Las funciones de importación en el paquete readr todas comienzan con read_, mientras que las funciones de importación para base R comienzan con read.
+
+---
+
+## Pregunta 12
+**Leíste un archivo que contiene información de los corredores y los tiempos de finalización de maratones utilizando el siguiente código:**
+
+race_times <- read.csv("times.csv", stringsAsFactors = F)
+
+**Seleccione la respuesta correcta:**  
+**Respuesta:** data frame
+
+---
+
+## Pregunta 13
+**Selecciona la opción de respuesta que resume todas las acciones que las siguientes líneas de código pueden realizar.  
+Ten en cuenta que la URL a continuación es un ejemplo y no lleva a datos.**
+
+url <- "https://raw.githubusercontent.com/MyUserName/MyProject/master/MyData.csv"  
+dat <- read_csv(url)  
+download.file(url, "MyData.csv")  
+
+**Respuesta:**  
+Crear un tibble en R llamado dat que contiene la información contenida en el archivo csv almacenado en Github. Descargar el archivo csv en el directorio de trabajo y nombrar el archivo descargado “MyData.csv”.
+
+---
